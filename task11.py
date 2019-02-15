@@ -11,6 +11,6 @@ def unique_words(book1):
 			#gauravbamania
 	for word in d1.keys():
 		list1.append(word)
-	print(list1) 
+	return list1 
 
 unique_words("Book1.txt")
