@@ -67,3 +67,7 @@ print (json.dumps(response.json(), indent=4, separators=(',', ': ')))
 r_resp=response.json()
 
 print(r_resp["response"][0]["hostIp"])
+
+d1 = dict()
+for index in r_resp["response"][0]:
+	d1[index["hostIp"] = d1.get(index["hostIp", ""] + index["hostType"]
