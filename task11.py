@@ -1,4 +1,11 @@
 import string
+
+def read_by_words(*args):
+	list1 = []
+	for arg in args:
+		list1.append(unique_words(arg))
+	return type(list1)
+	
 def unique_words(book1):
 	d1 = dict()
 	list1 =[]
@@ -13,4 +20,4 @@ def unique_words(book1):
 		list1.append(word)
 	return list1 
 
-unique_words("Book1.txt")
+print(read_by_words("Book1.txt","Book2.txt","Book3.txt"))
