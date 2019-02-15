@@ -1,30 +1,71 @@
 import string
 
-def read_by_words(*args):
-	list1 = []
-	for arg in args:
-		list1.append(unique_words(arg))
-	return list1
+
+
+def open_book(book):
 	
-def unique_words(book1):
 	d1 = dict()
-	list1 =[]
-	fout = open(book1, "r")
+	
+	fout = open(book, "r",encoding="utf8")
 	for line in fout:
 		line = line.split()
-		for index in range(0, len(line)):
+		for index in range(0,len(line)):
 			word = line[index].strip(string.whitespace + string.punctuation)
-			d1[word] = d1.get(word, 0) + 1
-			#gauravbamania
-	for word in d1.keys():
-		list1.append(word)
-	return list1
+			d1[word] = d1.get(word,0) + 1
+	
+	return d1
+	
+def reverse_dict(dict1):
+	reverse = dict()
+	for word in dict1:
+		val = dict1[word]
+		reverse.setdefault(val,[]).append(word)
+		
+	return reverse
+	
+def sort_dict(reverse_dict1):
+	dict2 = dict()
+	counter = 1
+	for key in sorted(reverse_dict1.keys(), reverse = True):
+		if (counter <=20):
+			print(str(key)+ ":",reverse_dict1[key])
+			counter += 1
 
-def count_the_article(lists):
-	len_list =[]
-	for list1 in lists:
-		 len_list.append(len(list1))
-	return len_list1
-lists = read_by_words("Book1.txt","Book2.txt","Book3.txt")
-count_the_article(lists)
+	
+
+def frequently_used(dict2):
+	counter = 1
+	for key in dict1:
+		if(counter<=20):
+			print(str(key)+":"+str(dict1[key]))
+		else:
+			break
+		counter = counter + 1
+	
+	
+
+
+book1 = "book_1.txt"
+dict1 = open_book(book1)
+
+reverse_dict1 = reverse_dict(dict1)
+
+sort_dict(reverse_dict1)
+
+
+
+
+print()
+
+
+
+
+
+
+
+	
+
+
+
+
 
